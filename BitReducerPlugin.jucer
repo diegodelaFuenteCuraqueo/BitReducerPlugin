@@ -6,6 +6,9 @@
     <GROUP id="{C0B97992-3279-B5C8-2CAF-43E776AF762E}" name="Source">
       <FILE id="cBA73T" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
+      <FILE id="PbWP1B" name="BitReduction.cpp" compile="1" resource="0"
+            file="Source/BitReduction.cpp"/>
+      <FILE id="PXYtPN" name="BitReduction.h" compile="0" resource="0" file="Source/BitReduction.h"/>
       <FILE id="HiGmPD" name="PluginProcessor.h" compile="0" resource="0"
             file="Source/PluginProcessor.h"/>
       <FILE id="v88Oyq" name="PluginEditor.cpp" compile="1" resource="0"

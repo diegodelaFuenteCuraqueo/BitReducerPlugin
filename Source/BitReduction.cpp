@@ -20,7 +20,7 @@ BitReduction::~BitReduction()
 
 }
 
-void BitReduction::bitReducProcess(float * inAudio, float* outAdudio, int inBitReduction, int inNumSamples)
+void BitReduction::bitReductionProcess(float * inAudio, float* outAudio, int inBitReduction, int inNumSamples)
 {
   if(inBitReduction > 1){
     for(int i = 0; i < inNumSamples; i++){

@@ -9,7 +9,7 @@
 #pragma once
 
 #include <JuceHeader.h>
-#include "BitReducer.h "
+#include "BitReduction.h"
 //==============================================================================
 /**
 */
@@ -61,7 +61,7 @@ public:
       
 
 private:
-     std::unique_ptr<BitReduction> ptr[2]; 
+    std::unique_ptr<BitReduction> ptrBit[2];
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BitReducerPluginAudioProcessor)
 };

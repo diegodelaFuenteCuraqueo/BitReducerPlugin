@@ -1,4 +1,6 @@
 Builds/
 JuceLibraryCode/
 *.opendb
+*~
 *.swp
+*.swo

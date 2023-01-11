@@ -10,10 +10,11 @@
 
 #pragma once
 
-class BitReduction{
+class BitReduction
+{
   public:
     BitReduction();
     ~BitReduction();
 
-    void bitReducProcess(float* inAudio, float* outAudio, int inBitReduction, int inNumSamples);
-}
+    void bitReductionProcess(float* inAudio, float* outAudio, int inBitReduction, int inNumSamples);
+};

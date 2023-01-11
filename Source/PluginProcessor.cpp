@@ -34,8 +34,8 @@ BitReducerPluginAudioProcessor::~BitReducerPluginAudioProcessor()
 
 juce::AudioProcessorValueTreeState::ParameterLayout initializeGUI() 
 {
-  std::vector<std::unique_ptr>juce::RangedAudioParameter>> params;
-  params.push_back(std::make_unique<juce:.AudioParameterInt>("BIT_ID",
+  std::vector<std::unique_ptr<juce::RangedAudioParameter>> params;
+  params.push_back(std::make_unique<juce::AudioParameterInt>("BIT_ID",
                                                             "BIT_NAME",
                                                             0,
                                                             64,
@@ -155,9 +155,9 @@ void BitReducerPluginAudioProcessor::processBlock (juce::AudioBuffer<float>& buf
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
         auto* channelData = buffer.getWritePointer (channel);
-        ptrBit [channel]->bitReductionProcess(channelData,
-                                              channelData,
-                                              *parameters.getParametersValue("BIT_ID"),
+        ptrBit[channel]->bitReductionProcess(channelData,
+                                             channelData,
+                                        *parameters.getRawParameterValue("BIT_ID"),
                                               buffer.getNumSamples()); 
 
     }
