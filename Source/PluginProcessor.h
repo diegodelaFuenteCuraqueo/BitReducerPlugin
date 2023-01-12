@@ -58,7 +58,6 @@ public:
 
     juce::AudioProcessorValueTreeState parameters;
     juce::AudioProcessorValueTreeState::ParameterLayout initializeGUI();
-      
 
 private:
     std::unique_ptr<BitReduction> ptrBit[2];

@@ -22,7 +22,8 @@ BitReducerPluginAudioProcessor::BitReducerPluginAudioProcessor()
                        ), parameters(*this, nullptr, "PARAMETERS", initializeGUI())
 #endif
 {
-  for(int i = 0; i<getTotalNumOutputChannels(); i++){
+  for(int i = 0; i < getTotalNumOutputChannels(); i++)
+  {
     ptrBit[i] = std::unique_ptr<BitReduction>(new BitReduction);
   }
 }
@@ -32,14 +33,14 @@ BitReducerPluginAudioProcessor::~BitReducerPluginAudioProcessor()
 }
 
 
-juce::AudioProcessorValueTreeState::ParameterLayout initializeGUI() 
+juce::AudioProcessorValueTreeState::ParameterLayout BitReducerPluginAudioProcessor::initializeGUI() 
 {
   std::vector<std::unique_ptr<juce::RangedAudioParameter>> params;
-  params.push_back(std::make_unique<juce::AudioParameterInt>("BIT_ID",
-                                                            "BIT_NAME",
-                                                            0,
-                                                            64,
-                                                            1));
+    params.push_back(std::make_unique<juce::AudioParameterInt>(juce::ParameterID {"BIT_ID",1},
+                                                             "BIT_NAME",
+                                                             0,
+                                                             64,
+                                                             1));
   return {params.begin(), params.end()};
 }
 //==============================================================================
@@ -150,15 +151,12 @@ void BitReducerPluginAudioProcessor::processBlock (juce::AudioBuffer<float>& buf
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
-        buffer.clear (i, 0, buffer.getNumSamples());
+      buffer.clear (i, 0, buffer.getNumSamples());
 
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
         auto* channelData = buffer.getWritePointer (channel);
-        ptrBit[channel]->bitReductionProcess(channelData,
-                                             channelData,
-                                        *parameters.getRawParameterValue("BIT_ID"),
-                                              buffer.getNumSamples()); 
+        ptrBit[channel]->bitReductionProcess(channelData, channelData, *parameters.getRawParameterValue("BIT_ID"), buffer.getNumSamples());
 
     }
 }

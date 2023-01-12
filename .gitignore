@@ -4,3 +4,5 @@ JuceLibraryCode/
 *~
 *.swp
 *.swo
+.vscode/
+*swp
