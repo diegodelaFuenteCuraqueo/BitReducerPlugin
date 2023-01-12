@@ -28,6 +28,12 @@ void BitReduction::bitReductionProcess(float* inAudio, float* outAudio, int inBi
     {
       if(i % inBitReduction != 0)
       {
+        /*
+          aplica bit reduction, si inBitReduction = 1, entonces la muestra se repite 1 vez
+          inBitReduction = 2, entonces la muestra se repite 2 veces
+          inBitReduction = 3, entonces la muestra se repite 3 veces..etc
+          Es como disminuir el samplerate usando un valor escalar (2 -> 22050, 4 -> 11025, ...)
+        */
         outAudio[i] =  (inAudio[i - i % inBitReduction]) * 2;
       }
     }

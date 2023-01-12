@@ -16,5 +16,10 @@ class BitReduction
     BitReduction();
     ~BitReduction();
 
+    /*
+     reduce calidad de señal entrante inAudio, en outAudio.
+     inBitReduction indica la cantidad de repeticiones de la muestra (disminyyendo resolucion temporal)
+     inNumSamples es el tamaño del buffer de audio
+    */
     void bitReductionProcess(float* inAudio, float* outAudio, int inBitReduction, int inNumSamples);
 };

@@ -60,6 +60,7 @@ public:
     juce::AudioProcessorValueTreeState::ParameterLayout initializeGUI();
 
 private:
+    // declaramos un puntero tipo BitReduction de 2 canales
     std::unique_ptr<BitReduction> ptrBit[2];
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BitReducerPluginAudioProcessor)
